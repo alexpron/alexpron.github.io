@@ -20,7 +20,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Engineer in medical data management
+role: Research Engineer in medical data management
 # Organizations/Affiliations to display in Biography blox
 organizations:
   - name: Inria
@@ -132,20 +132,6 @@ languages:
   - name: English
   - name: French
   - name: Spanish
-
- 
-
-
-# Awards.
-#   Add/remove as many awards below as you like.
-#   Only `title`, `awarder`, and `date` are required.
-#   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
-#awards:
-#  - title: Neural Networks and Deep Learning
-#    url: https://www.coursera.org/learn/neural-networks-deep-learning
-#    date: '2023-11-25'
-#    awarder: Coursera
-#    icon: coursera
  
 ---
 
