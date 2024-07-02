@@ -63,7 +63,7 @@ education:
     date_start: 2014-10-01
     date_end: 2015-09-30
   - area: Meng Statistical Modelling
-    institution: TélécomSudparis
+    institution: TélécomSudParis
     date_start: 2010-01-01
     date_end: 2013-09-30
     #summary: |
