@@ -10,7 +10,4 @@ main:
   - name: Publications
     url: /#papers
     weight: 11
-  - name: Softwares
-    url: softwares/
-    weight: 20
 
