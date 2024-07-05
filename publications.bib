@@ -1,89 +1,572 @@
-@article{bodin2019plis,
-  title={Plis-de-passage within the STS: morphological characterization and underlying connectivity},
-  author={Bodin, C and Pron, A and LeMao, M and R{\'e}gis, J and Belin, P and Coulon, O},
-  journal={OHBM, Roma},
-  year={2019}
+
+@article{botvinik-nezer_reproducibility_2023,
+	title = {Reproducibility in {Neuroimaging} {Analysis}: {Challenges} and {Solutions}},
+	volume = {8},
+	issn = {24519022},
+	shorttitle = {Reproducibility in {Neuroimaging} {Analysis}},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S245190222200341X},
+	doi = {10.1016/j.bpsc.2022.12.006},
+	abstract = {Recent years have marked a renaissance in efforts to increase research reproducibility in psychology, neuroscience, and related ﬁelds. Reproducibility is the cornerstone of a solid foundation of fundamental research—one that will support new theories built on valid ﬁndings and technological innovation that works. The increased focus on reproducibility has made the barriers to it increasingly apparent, along with the development of new tools and practices to overcome these barriers. Here, we review challenges, solutions, and emerging best practices with a particular emphasis on neuroimaging studies. We distinguish 3 main types of reproducibility, discussing each in turn. Analytical reproducibility is the ability to reproduce ﬁndings using the same data and methods. Replicability is the ability to ﬁnd an effect in new datasets, using the same or similar methods. Finally, robustness to analytical variability refers to the ability to identify a ﬁnding consistently across variation in methods. The incorporation of these tools and practices will result in more reproducible, replicable, and robust psychological and brain research and a stronger scientiﬁc foundation across ﬁelds of inquiry.},
+	language = {en},
+	number = {8},
+	urldate = {2024-01-19},
+	journal = {Biological Psychiatry: Cognitive Neuroscience and Neuroimaging},
+	author = {Botvinik-Nezer, Rotem and Wager, Tor D.},
+	month = aug,
+	year = {2023},
+	keywords = {Important, Review},
+	pages = {780--788},
+	annote = {analytical reproducibility = same data same methods should induce same results (what is the nature/scale of the result ?)
+
+robustness to analytical variability: same data, different methods(Jeremy’s topic)
+},
+	file = {Botvinik-Nezer and Wager - 2023 - Reproducibility in Neuroimaging Analysis Challeng.pdf:/home/alpron/Zotero/storage/HE2F52IP/Botvinik-Nezer and Wager - 2023 - Reproducibility in Neuroimaging Analysis Challeng.pdf:application/pdf},
 }
 
-@article{pron2021u,
-  title={U-shape short-range extrinsic connectivity organisation around the human central sulcus},
-  author={Pron, Alexandre and Deruelle, Christine and Coulon, Olivier},
-  journal={Brain Structure and Function},
-  volume={226},
-  number={1},
-  pages={179--193},
-  year={2021},
-  publisher={Springer Berlin Heidelberg}
+@article{wagner_fairly_2022,
+	title = {{FAIRly} big: {A} framework for computationally reproducible processing of large-scale data},
+	volume = {9},
+	issn = {2052-4463},
+	shorttitle = {{FAIRly} big},
+	url = {https://www.nature.com/articles/s41597-022-01163-2},
+	doi = {10.1038/s41597-022-01163-2},
+	abstract = {Abstract
+            Large-scale datasets present unique opportunities to perform scientific investigations with unprecedented breadth. However, they also pose considerable challenges for the findability, accessibility, interoperability, and reusability (FAIR) of research outcomes due to infrastructure limitations, data usage constraints, or software license restrictions. Here we introduce a DataLad-based, domain-agnostic framework suitable for reproducible data processing in compliance with open science mandates. The framework attempts to minimize platform idiosyncrasies and performance-related complexities. It affords the capture of machine-actionable computational provenance records that can be used to retrace and verify the origins of research outcomes, as well as be re-executed independent of the original computing infrastructure. We demonstrate the framework’s performance using two showcases: one highlighting data sharing and transparency (using the studyforrest.org dataset) and another highlighting scalability (using the largest public brain imaging dataset available: the UK Biobank dataset).},
+	language = {en},
+	number = {1},
+	urldate = {2024-01-03},
+	journal = {Scientific Data},
+	author = {Wagner, Adina S. and Waite, Laura K. and Wierzba, Małgorzata and Hoffstaedter, Felix and Waite, Alexander Q. and Poldrack, Benjamin and Eickhoff, Simon B. and Hanke, Michael},
+	month = mar,
+	year = {2022},
+	note = {Number: 1},
+	keywords = {datalad, Important},
+	pages = {80},
+	annote = {AIM: FAIRLYBIG article introduce a datalad based framework for reproducible, scalable domain agnostic computationsIntroductionFAIR = Findability, accessibility, interoperability and reusabilityProcessing of large scale datasets ={\textgreater} necessary to have efficient processing techniques and derivatives data sharing and reuse strategies (reduces environnmental cost, open data to researchers with no sufficient computing resource) with an emphasis on trustworthiness (and thus tracking).Examples of big dataset in the neuroimaging ecosystem:+ HCP+ dHCP+ ABCD+ UK Biobank
+“Here, we present a portable, free and open source framework — built on DataLad14 and containerization software15 — to reproducibly process large-scale datasets. It empowers independent consumers to verify or reproduce the results based on machine-actionable (i.e., machine-readable, automatically re-executable) records of computational provenance, in an infrastructure-agnostic fashion.” (Wagner et al., 2022, p. 2)machine actionable = computer can re execute directly the computation when reading these results.contributions: datalad-ukbiobank (datalad plugin) + datalad-container for processing
+ResultsEfficient tracking of datasetsOne dataset = two representations + a regular directory tree (access, processing)+ storage representation (storage)All components of classic processing chain (data, code, containers)  can be identified and tracked relying on cryptographic hash (1 file = 1 hash) (How does this work ?)
+Efficient data processing
+storage location != processing location retrieve only data that are needed, process them and “commit” the changesDatalad != workflow engine but can be interfaced with a workflow engine such as snakemake (what about nipype/pydra ?)Process provenance capture
+Performed by datalad run (shell script execution) or datalad container-run
+Recompute a previous computation using datalad rerun command
+“Process provenance—how code and commands created results from input data in a particular computational environment—of any processing routine can be captured and stored in machine-readable, automatically re-executable records” (Wagner et al., 2022, p. 4)PROV data model = ? SHOWCASE example : the UK BIOBANK Project using containerized CAT12 toolboxHow to use SLURM + SNAKEMAKE (PYDRA ?)Alternatives to FAIRLY BIG+ Pan-Neuro --{\textgreater} more toward interactive processing+ DVC+ SnakeMake + Apache Spark/DaskLimitations
+},
+	file = {Wagner et al. - 2022 - FAIRly big A framework for computationally reprod.pdf:/home/alpron/Zotero/storage/JQW82RZ9/Wagner et al. - 2022 - FAIRly big A framework for computationally reprod.pdf:application/pdf},
 }
 
-@article{bodin2021plis,
-  title={Plis de passage in the superior temporal sulcus: Morphology and local connectivity},
-  author={Bodin, Cl{\'e}mentine and Pron, Alexandre and Le Mao, Marion and R{\'e}gis, Jean and Belin, Pascal and Coulon, Olivier},
-  journal={Neuroimage},
-  volume={225},
-  pages={117513},
-  year={2021},
-  publisher={Academic Press}
+@article{halchenko_datalad_2021,
+	title = {{DataLad}: distributed system for joint management of code, data, and their relationship},
+	volume = {6},
+	issn = {2475-9066},
+	shorttitle = {{DataLad}},
+	url = {https://joss.theoj.org/papers/10.21105/joss.03262},
+	doi = {10.21105/joss.03262},
+	number = {63},
+	urldate = {2024-01-03},
+	journal = {Journal of Open Source Software},
+	author = {Halchenko, Yaroslav and Meyer, Kyle and Poldrack, Benjamin and Solanky, Debanjum and Wagner, Adina and Gors, Jason and MacFarlane, Dave and Pustina, Dorian and Sochat, Vanessa and Ghosh, Satrajit and Mönch, Christian and Markiewicz, Christopher and Waite, Laura and Shlyakhter, Ilya and De La Vega, Alejandro and Hayashi, Soichi and Häusler, Christian and Poline, Jean-Baptiste and Kadelka, Tobias and Skytén, Kusti and Jarecka, Dorota and Kennedy, David and Strauss, Ted and Cieslak, Matt and Vavra, Peter and Ioanas, Horea-Ioan and Schneider, Robin and Pflüger, Mika and Haxby, James and Eickhoff, Simon and Hanke, Michael},
+	month = jul,
+	year = {2021},
+	note = {Number: 63},
+	keywords = {datalad},
+	pages = {3262},
+	file = {Halchenko et al. - 2021 - DataLad distributed system for joint management o.pdf:/home/alpron/Zotero/storage/JWK96IST/Halchenko et al. - 2021 - DataLad distributed system for joint management o.pdf:application/pdf},
 }
 
-@inproceedings{pron2018dense,
-  title={Dense and structured representations of U-shape fiber connectivity in the central sulcus},
-  author={Pron, Alexandre and Brun, Lucile and Deruelle, Christine and Coulon, Olivier},
-  booktitle={2018 IEEE 15th International Symposium on Biomedical Imaging (ISBI 2018)},
-  pages={700--703},
-  year={2018},
-  organization={IEEE}
+@misc{bollmann_neurodesk_2023,
+	type = {preprint},
+	title = {Neurodesk: {An} accessible, flexible, and portable data analysis environment for reproducible neuroimaging},
+	shorttitle = {Neurodesk},
+	url = {https://www.researchsquare.com/article/rs-2649734/v1},
+	abstract = {Abstract
+          Neuroimaging data analysis often requires purpose-built software, which can be challenging to install and may produce different results across computing environments. Beyond being a roadblock to neuroscientists, these issues of accessibility and portability can hamper the reproducibility of neuroimaging data analysis pipelines. Here, we introduce the Neurodesk platform, which harnesses software containers to support a comprehensive and growing suite of neuroimaging software (https://www.neurodesk.org/). Neurodesk includes a browser-accessible virtual desktop environment and a command line interface, mediating access to containerized neuroimaging software libraries on various computing platforms, including personal and high-performance computers, cloud computing and Jupyter Notebooks. This community-oriented, open-source platform enables a paradigm shift for neuroimaging data analysis, allowing for accessible, flexible, fully reproducible, and portable data analysis pipelines.},
+	urldate = {2024-01-04},
+	publisher = {In Review},
+	author = {Bollmann, Steffen and Renton, Angela and Dao, Thuy and Johnstone, Tom and Civier, Oren and Sullivan, Ryan and White, David and Lyons, Paris and Slade, Benjamin and Abbott, David and Amos, Toluwani and Bollmann, Saskia and Botting, Andy and Campbell, Megan and Chang, Jeryn and Close, Thomas and Eckstein, Korbinian and Egan, Gary and Evas, Stefanie and Flandin, Guillaume and Garner, Kelly and Garrido, Marta and Ghosh, Satrajit and Grignard, Martin and Hannan, Anthony and Huber, Laurentius (Renzo) and Kaczmarzyk, Jakub and Kasper, Lars and Kuhlmann, Levin and Lou, Kexin and Mantilla-Ramos, Yorguin-Jose and Mattingley, Jason and Morris, Jo and Narayanan, Akshaiy and Pestilli, Franco and Puce, Aina and Ribeiro, Fernanda and Rogasch, Nigel and Rorden, Chris and Schira, Mark and Shaw, Thomas and Sowman, Paul and Spitz, Gershon and Stewart, Ashley and Ye, Xincheng and Zhu, Judy and Hughes, Matthew and Narayanan, Aswin},
+	month = mar,
+	year = {2023},
+	doi = {10.21203/rs.3.rs-2649734/v1},
+	file = {Bollmann et al. - 2023 - Neurodesk An accessible, flexible, and portable d.pdf:/home/alpron/Zotero/storage/AQR5KZMM/Bollmann et al. - 2023 - Neurodesk An accessible, flexible, and portable d.pdf:application/pdf},
 }
 
-@article{brun2019diffusion,
-  title={Diffusion MRI: assessment of the impact of acquisition and preprocessing methods using the BrainVISA-diffuse toolbox},
-  author={Brun, Lucile and Pron, Alexandre and Sein, Julien and Deruelle, Christine and Coulon, Olivier},
-  journal={Frontiers in neuroscience},
-  volume={13},
-  pages={536},
-  year={2019},
-  publisher={Frontiers Media SA}
+@misc{colliot_reproducibility_nodate,
+	title = {Reproducibility in medical image computing: what is it and how is it assessed?},
+	abstract = {Medical image computing (MIC) is devoted to computational methods for analysis of medical imaging data and their assessment through experiments. It is thus an experimental science. Reproducibility is a cornerstone of progress in all experimental sciences. As in many other fields, there are major concerns that reproducibility is unsatisfactory in MIC. However, reproducibility is not a single concept but a spectrum, which is often misunderstood by researchers. Moreover, even though some measures have been put in place to promote reproducibility in the MIC community, it is unclear if they have been effective so far.},
+	language = {en},
+	author = {Colliot, Olivier and Thibeau-Sutre, Elina and Brianceau, Camille and Burgos, Ninon},
+	annote = {Abstract
+Reproducibility is a spectrum most of the time misunderstood as illustrated by the quantitative analysis of MICCAI reviews: in medical image computing some bad practices remains that should be corrected. Introduction
+Reproducibility -{\textgreater} linked to a measure 
+Reproducibility within medical imaging --{\textgreater} clinical results are the targetDIfferent types of reproducibility:
+
+
+Exact reproducibility: identical results as those of a previously published paper Remark: what is the metric for that
+
+
+Statistical reproducibility: reproduce results under statiscally equivalent conditionse.g. another sample for the same population
+
+
+Conceptual reproducibility
+
+
+Measurement reproducibility 
+
+
+},
+	file = {Colliot et al. - Reproducibility in medical image computing what i.pdf:/home/alpron/Zotero/storage/XCGVIGEI/Colliot et al. - Reproducibility in medical image computing what i.pdf:application/pdf},
 }
 
-@inproceedings{mercier2023estimation,
-  title={Estimation de mouvement r{\'e}trospective pour l'IRM c{\'e}r{\'e}brale foetale},
-  author={Mercier, Chlo{\'e} and Faisan, Sylvain and Pron, Alexandre and Girard, Nadine and Auzias, Guillaume and Chonavel, Thierry and Rousseau, Fran{\c{c}}ois},
-  booktitle={GRETSI 2023},
-  year={2023}
+@article{chekroud_illusory_2024,
+	title = {Illusory generalizability of clinical prediction models},
+	volume = {383},
+	issn = {0036-8075, 1095-9203},
+	url = {https://www.science.org/doi/10.1126/science.adg8538},
+	doi = {10.1126/science.adg8538},
+	abstract = {It is widely hoped that statistical models can improve decision-making related to medical treatments. Because of the cost and scarcity of medical outcomes data, this hope is typically based on investigators observing a model’s success in one or two datasets or clinical contexts. We scrutinized this optimism by examining how well a machine learning model performed across several independent clinical trials of antipsychotic medication for schizophrenia. Models predicted patient outcomes with high accuracy within the trial in which the model was developed but performed no better than chance when applied out-of-sample. Pooling data across trials to predict outcomes in the trial left out did not improve predictions. These results suggest that models predicting treatment outcomes in schizophrenia are highly context-dependent and may have limited generalizability.
+          , 
+            Editor’s summary
+            
+              A central promise of artificial intelligence (AI) in healthcare is that large datasets can be mined to predict and identify the best course of care for future patients. Unfortunately, we do not know how these models would perform on new patients because they are rarely tested prospectively on truly independent patient samples. Chekroud
+              et al
+              . showed that machine learning models routinely achieve perfect performance in one dataset even when that dataset is a large international multisite clinical trial (see the Perspective by Petzschner). However, when that exact model was tested in truly independent clinical trials, performance fell to chance levels. Even when building what should be a more robust model by aggregating across a group of similar multisite trials, subsequent predictive performance remained poor. —Peter Stern
+            
+          , 
+            Clinical prediction models that work in one trial do not work in future trials of the same condition and same treatments.},
+	language = {en},
+	number = {6679},
+	urldate = {2024-01-15},
+	journal = {Science},
+	author = {Chekroud, Adam M. and Hawrilenko, Matt and Loho, Hieronimus and Bondar, Julia and Gueorguieva, Ralitza and Hasan, Alkomiet and Kambeitz, Joseph and Corlett, Philip R. and Koutsouleris, Nikolaos and Krumholz, Harlan M. and Krystal, John H. and Paulus, Martin},
+	month = jan,
+	year = {2024},
+	note = {Number: 6679},
+	keywords = {Important},
+	pages = {164--167},
+	file = {Chekroud et al. - 2024 - Illusory generalizability of clinical prediction m.pdf:/home/alpron/Zotero/storage/WRRD7K3B/Chekroud et al. - 2024 - Illusory generalizability of clinical prediction m.pdf:application/pdf},
 }
 
-@inproceedings{mercier2023retrospective,
-  title={Retrospective motion estimation for fetal brain MRI},
-  author={Mercier, Chlo{\'e} and Faisan, Sylvain and Pron, Alexandre and Girard, Nadine and Auzias, Guillaume and Chonavel, Thierry and Rousseau, Fran{\c{c}}ois},
-  booktitle={2023 Twelfth International Conference on Image Processing Theory, Tools and Applications (IPTA)},
-  pages={1--6},
-  year={2023},
-  organization={IEEE}
+@book{elisadecastroguerra_vers_2024,
+	title = {Vers une recherche reproductible},
+	url = {https://bookdown.org/alegrand/bookdown/},
+	abstract = {Livre d’introduction à la recherche reproductible rédigé lors d’un booksprint.},
+	urldate = {2024-01-16},
+	author = {Elisa de Castro Guerra, Sabrina Granger, Boris Hejblum, Arnaud Legrand, Pascal Pernot, Nicolas Rougier Facilitatrice :, Loïc Desquilbet},
+	month = jan,
+	year = {2024},
+	annote = {Vers une recherche reproductible
+PréambulePremière définition de définition reproductible: 
+Définition de recherche reproductible adoptée dans ce documentRecherche reproductible = gage de transparence de la recherche
+
+
+},
+	file = {Snapshot:/home/alpron/Zotero/storage/7VJEDL93/bookrr.html:text/html},
 }
 
-@article{valabregue2024comprehensive,
-  title={Comprehensive analysis of synthetic learning applied to neonatal brain MRI segmentation},
-  author={Valabregue, R and Girka, F and Pron, A and Rousseau, F and Auzias, G},
-  journal={Human Brain Mapping},
-  volume={45},
-  number={6},
-  pages={e26674},
-  year={2024},
-  publisher={John Wiley \& Sons, Inc. Hoboken, USA}
+@article{noauthor_containers_2023,
+	title = {Containers for computational reproducibility},
+	volume = {3},
+	issn = {2662-8449},
+	url = {https://doi.org/10.1038/s43586-023-00244-9},
+	doi = {10.1038/s43586-023-00244-9},
+	abstract = {This PrimeView highlights the range of applications benefiting from the use of containers for reproducibility of computational data analysis.},
+	number = {1},
+	journal = {Nature Reviews Methods Primers},
+	month = jul,
+	year = {2023},
+	pages = {51},
 }
 
-@article{sanchez2023fetmrqc,
-  title={FetMRQC: an open-source machine learning framework for multi-centric fetal brain MRI quality control},
-  author={Sanchez, Thomas and Esteban, Oscar and Gomez, Yvan and Pron, Alexandre and Koob, M{\'e}riam and Dunet, Vincent and Girard, Nadine and Jakab, Andras and Eixarch, Elisenda and Auzias, Guillaume and others},
-  journal={arXiv preprint arXiv:2311.04780},
-  year={2023}
+@article{vogt_reproducibility_2023,
+	title = {Reproducibility in {MRI}},
+	volume = {20},
+	issn = {1548-7091, 1548-7105},
+	url = {https://www.nature.com/articles/s41592-022-01737-3},
+	doi = {10.1038/s41592-022-01737-3},
+	language = {en},
+	number = {1},
+	urldate = {2024-01-19},
+	journal = {Nature Methods},
+	author = {Vogt, Nina},
+	month = jan,
+	year = {2023},
+	pages = {34--34},
 }
 
-@article{mihailov2024normative,
-  title={Normative models combining fetal and postnatal MRI data to characterize neurodevelopmental trajectories during the transition from in-to ex-utero},
-  author={Mihailov, Angeline and Pron, Alexandre and Lefevre, Julien and Deruelle, Christine and Desnous, Beatrice and Bretelle, Florence and Manchon, Aurelie and Milh, Mathieu and Rousseau, Francois and Auzias, Guillaume and others},
-  journal={bioRxiv},
-  pages={2024--03},
-  year={2024},
-  publisher={Cold Spring Harbor Laboratory}
+@article{botvinik-nezer_fmri_2019,
+	title = {{fMRI} data of mixed gambles from the {Neuroimaging} {Analysis} {Replication} and {Prediction} {Study}},
+	volume = {6},
+	issn = {2052-4463},
+	url = {https://www.nature.com/articles/s41597-019-0113-7},
+	doi = {10.1038/s41597-019-0113-7},
+	abstract = {Abstract
+            There is an ongoing debate about the replicability of neuroimaging research. It was suggested that one of the main reasons for the high rate of false positive results is the many degrees of freedom researchers have during data analysis. In the Neuroimaging Analysis Replication and Prediction Study (NARPS), we aim to provide the first scientific evidence on the variability of results across analysis teams in neuroscience. We collected fMRI data from 108 participants during two versions of the mixed gambles task, which is often used to study decision-making under risk. For each participant, the dataset includes an anatomical (T1 weighted) scan and fMRI as well as behavioral data from four runs of the task. The dataset is shared through OpenNeuro and is formatted according to the Brain Imaging Data Structure (BIDS) standard. Data pre-processed with fMRIprep and quality control reports are also publicly shared. This dataset can be used to study decision-making under risk and to test replicability and interpretability of previous results in the field.},
+	language = {en},
+	number = {1},
+	urldate = {2024-01-22},
+	journal = {Scientific Data},
+	author = {Botvinik-Nezer, Rotem and Iwanir, Roni and Holzmeister, Felix and Huber, Jürgen and Johannesson, Magnus and Kirchler, Michael and Dreber, Anna and Camerer, Colin F. and Poldrack, Russell A. and Schonberg, Tom},
+	month = jul,
+	year = {2019},
+	keywords = {NARPS},
+	pages = {106},
+	file = {Botvinik-Nezer et al. - 2019 - fMRI data of mixed gambles from the Neuroimaging A.pdf:/home/alpron/Zotero/storage/7P9AT6CT/Botvinik-Nezer et al. - 2019 - fMRI data of mixed gambles from the Neuroimaging A.pdf:application/pdf},
+}
+
+@article{zhao_reproducible_2024,
+	title = {A reproducible and generalizable software workflow for analysis of large-scale neuroimaging data collections using {BIDS} {Apps}},
+	volume = {2},
+	issn = {2837-6056},
+	url = {https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00074/119046/A-reproducible-and-generalizable-software-workflow},
+	doi = {10.1162/imag_a_00074},
+	abstract = {Abstract
+            Neuroimaging research faces a crisis of reproducibility. With massive sample sizes and greater data complexity, this problem becomes more acute. Software that operates on imaging data defined using the Brain Imaging Data Structure (BIDS)—the BIDS App—has provided a substantial advance. However, even using BIDS Apps, a full audit trail of data processing is a necessary prerequisite for fully reproducible research. Obtaining a faithful record of the audit trail is challenging—especially for large datasets. Recently, the FAIRly big framework was introduced as a way to facilitate reproducible processing of large-scale data by leveraging DataLad—a version control system for data management. However, the current implementation of this framework was more of a proof of concept, and could not be immediately reused by other investigators for different use cases. Here, we introduce the BIDS App Bootstrap (BABS), a user-friendly and generalizable Python package for reproducible image processing at scale. BABS facilitates the reproducible application of BIDS Apps to large-scale datasets. Leveraging DataLad and the FAIRly big framework, BABS tracks the full audit trail of data processing in a scalable way by automatically preparing all scripts necessary for data processing and version tracking on high performance computing (HPC) systems. Currently, BABS supports jobs submissions and audits on Sun Grid Engine (SGE) and Slurm HPCs with a parsimonious set of programs. To demonstrate its scalability, we applied BABS to data from the Healthy Brain Network (HBN; n = 2,565). Taken together, BABS allows reproducible and scalable image processing and is broadly extensible via an open-source development model.},
+	language = {en},
+	urldate = {2024-02-09},
+	journal = {Imaging Neuroscience},
+	author = {Zhao, Chenying and Jarecka, Dorota and Covitz, Sydney and Chen, Yibei and Eickhoff, Simon B. and Fair, Damien A. and Franco, Alexandre R. and Halchenko, Yaroslav O. and Hendrickson, Timothy J. and Hoffstaedter, Felix and Houghton, Audrey and Kiar, Gregory and Macdonald, Austin and Mehta, Kahini and Milham, Michael P. and Salo, Taylor and Hanke, Michael and Ghosh, Satrajit S. and Cieslak, Matthew and Satterthwaite, Theodore D.},
+	month = jan,
+	year = {2024},
+	keywords = {Important},
+	pages = {1--19},
+	annote = {“DaLad tracks the “checksum” of the file content, a short, fixed-length hexadecimal number (e.g., 32 digits for MD5 checksum) representing the file content.” (Zhao et al., 2024, p. 3) Checksum is sufficient to represent even a large and complex file (is there a limit to the file size) and can detect even byte change. Git-annex tracks the checksum that represents the file as it is cheaper in resource than to track the file/
+},
+	file = {Zhao et al. - 2024 - A reproducible and generalizable software workflow.pdf:/home/alpron/Zotero/storage/SLA62NAB/Zhao et al. - 2024 - A reproducible and generalizable software workflow.pdf:application/pdf},
+}
+
+@article{niso_open_2022,
+	title = {Open and reproducible neuroimaging: {From} study inception to publication},
+	volume = {263},
+	issn = {10538119},
+	shorttitle = {Open and reproducible neuroimaging},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S1053811922007388},
+	doi = {10.1016/j.neuroimage.2022.119623},
+	language = {en},
+	urldate = {2024-02-09},
+	journal = {NeuroImage},
+	author = {Niso, Guiomar and Botvinik-Nezer, Rotem and Appelhoff, Stefan and De La Vega, Alejandro and Esteban, Oscar and Etzel, Joset A. and Finc, Karolina and Ganz, Melanie and Gau, Rémi and Halchenko, Yaroslav O. and Herholz, Peer and Karakuzu, Agah and Keator, David B. and Markiewicz, Christopher J. and Maumet, Camille and Pernet, Cyril R. and Pestilli, Franco and Queder, Nazek and Schmitt, Tina and Sójka, Weronika and Wagner, Adina S. and Whitaker, Kirstie J. and Rieger, Jochem W.},
+	month = nov,
+	year = {2022},
+	pages = {119623},
+	file = {Niso et al. - 2022 - Open and reproducible neuroimaging From study inc.pdf:/home/alpron/Zotero/storage/6IM7E6YQ/Niso et al. - 2022 - Open and reproducible neuroimaging From study inc.pdf:application/pdf},
+}
+
+@article{bao_integrating_2022,
+	title = {Integrating the {BIDS} {Neuroimaging} {Data} {Format} and {Workflow} {Optimization} for {Large}-{Scale} {Medical} {Image} {Analysis}},
+	volume = {35},
+	issn = {0897-1889, 1618-727X},
+	url = {https://link.springer.com/10.1007/s10278-022-00679-8},
+	doi = {10.1007/s10278-022-00679-8},
+	abstract = {A robust medical image computing infrastructure must host massive multimodal archives, perform extensive analysis pipelines, and execute scalable job management. An emerging data format standard, the Brain Imaging Data Structure (BIDS), introduces complexities for interfacing with XNAT archives. Moreover, workflow integration is combinatorically problematic when matching large amount of processing to large datasets. Historically, workflow engines have been focused on refining workflows themselves instead of actual job generation. However, such an approach is incompatible with data centric architecture that hosts heterogeneous medical image computing. Distributed automation for XNAT toolkit (DAX) provides large-scale image storage and analysis pipelines with an optimized job management tool. Herein, we describe developments for DAX that allows for integration of XNAT and BIDS standards. We also improve DAX’s efficiencies of diverse containerized workflows in a high-performance computing (HPC) environment. Briefly, we integrate YAML configuration processor scripts to abstract workflow data inputs, data outputs, commands, and job attributes. Finally, we propose an online database–driven mechanism for DAX to efficiently identify the most recent updated sessions, thereby improving job building efficiency on large projects. We refer the proposed overall DAX development in this work as DAX-1 (DAX version 1). To validate the effectiveness of the new features, we verified (1) the efficiency of converting XNAT data to BIDS format and the correctness of the conversion using a collection of BIDS standard containerized neuroimaging workflows, (2) how YAML-based processor simplified configuration setup via a sequence of application pipelines, and (3) the productivity of DAX-1 on generating actual HPC processing jobs compared with earlier DAX baseline method. The empirical results show that (1) DAX-1 converting XNAT data to BIDS has similar speed as accessing XNAT data only; (2) YAML can integrate to the DAX-1 with shallow learning curve for users, and (3) DAX-1 reduced the job/assessor generation latency by finding recent modified sessions. Herein, we present approaches for efficiently integrating XNAT and modern image formats with a scalable workflow engine for the large-scale dataset access and processing.},
+	language = {en},
+	number = {6},
+	urldate = {2024-02-09},
+	journal = {Journal of Digital Imaging},
+	author = {Bao, Shunxing and Boyd, Brian D. and Kanakaraj, Praitayini and Ramadass, Karthik and Meyer, Francisco A. C. and Liu, Yuqian and Duett, William E. and Huo, Yuankai and Lyu, Ilwoo and Zald, David H. and Smith, Seth A. and Rogers, Baxter P. and Landman, Bennett A.},
+	month = dec,
+	year = {2022},
+	pages = {1576--1589},
+	file = {Bao et al. - 2022 - Integrating the BIDS Neuroimaging Data Format and .pdf:/home/alpron/Zotero/storage/HIE7CU7H/Bao et al. - 2022 - Integrating the BIDS Neuroimaging Data Format and .pdf:application/pdf},
+}
+
+@article{vallet_toward_2022,
+	title = {Toward practical transparent verifiable and long-term reproducible research using {Guix}},
+	volume = {9},
+	issn = {2052-4463},
+	url = {https://www.nature.com/articles/s41597-022-01720-9},
+	doi = {10.1038/s41597-022-01720-9},
+	abstract = {Abstract
+            Reproducibility crisis urge scientists to promote transparency which allows peers to draw same conclusions after performing identical steps from hypothesis to results. Growing resources are developed to open the access to methods, data and source codes. Still, the computational environment, an interface between data and source code running analyses, is not addressed. Environments are usually described with software and library names associated with version labels or provided as an opaque container image. This is not enough to describe the complexity of the dependencies on which they rely to operate on. We describe this issue and illustrate how open tools like Guix can be used by any scientist to share their environment and allow peers to reproduce it. Some steps of research might not be fully reproducible, but at least, transparency for computation is technically addressable. These tools should be considered by scientists willing to promote transparency and open science.},
+	language = {en},
+	number = {1},
+	urldate = {2024-02-27},
+	journal = {Scientific Data},
+	author = {Vallet, Nicolas and Michonneau, David and Tournier, Simon},
+	month = oct,
+	year = {2022},
+	pages = {597},
+	file = {Vallet et al. - 2022 - Toward practical transparent verifiable and long-t.pdf:/home/alpron/Zotero/storage/KT6J79AS/Vallet et al. - 2022 - Toward practical transparent verifiable and long-t.pdf:application/pdf},
+}
+
+@article{goble_fair_2020,
+	title = {{FAIR} {Computational} {Workflows}},
+	volume = {2},
+	issn = {2641-435X},
+	url = {https://direct.mit.edu/dint/article/2/1-2/108-121/10003},
+	doi = {10.1162/dint_a_00033},
+	abstract = {Computational workflows describe the complex multi-step methods that are used for data collection, data preparation, analytics, predictive modelling, and simulation that lead to new data products. They can inherently contribute to the FAIR data principles: by processing data according to established metadata; by creating metadata themselves during the processing of data; and by tracking and recording data provenance. These properties aid data quality assessment and contribute to secondary data usage. Moreover, workflows are digital objects in their own right. This paper argues that FAIR principles for workflows need to address their specific nature in terms of their composition of executable software steps, their provenance, and their development.},
+	language = {en},
+	number = {1-2},
+	urldate = {2024-02-28},
+	journal = {Data Intelligence},
+	author = {Goble, Carole and Cohen-Boulakia, Sarah and Soiland-Reyes, Stian and Garijo, Daniel and Gil, Yolanda and Crusoe, Michael R. and Peters, Kristian and Schober, Daniel},
+	month = jan,
+	year = {2020},
+	pages = {108--121},
+	file = {Goble et al. - 2020 - FAIR Computational Workflows.pdf:/home/alpron/Zotero/storage/B723BQ83/Goble et al. - 2020 - FAIR Computational Workflows.pdf:application/pdf},
+}
+
+@article{chen_reproducing_2022,
+	title = {Reproducing {FSL}'s {fMRI} data analysis via {Nipype}: {Relevance}, challenges, and solutions},
+	volume = {1},
+	issn = {2813-1193},
+	shorttitle = {Reproducing {FSL}'s {fMRI} data analysis via {Nipype}},
+	url = {https://www.frontiersin.org/articles/10.3389/fnimg.2022.953215/full},
+	doi = {10.3389/fnimg.2022.953215},
+	abstract = {The “replication crisis” in neuroscientific research has led to calls for improving reproducibility. In traditional neuroscience analyses, irreproducibility may occur as a result of issues across various stages of the methodological process. For example, different operating systems, different software packages, and even different versions of the same package can lead to variable results. Nipype, an open-source Python project, integrates different neuroimaging software packages uniformly to improve the reproducibility of neuroimaging analyses. Nipype has the advantage over traditional software packages (e.g., FSL, ANFI, SPM, etc.) by (1) providing comprehensive software development frameworks and usage information, (2) improving computational efficiency, (3) facilitating reproducibility through sufficient details, and (4) easing the steep learning curve. Despite the rich tutorials it has provided, the Nipype community lacks a standard three-level GLM tutorial for FSL. Using the classical Flanker task dataset, we first precisely reproduce a three-level GLM analysis with FSL
+              via
+              Nipype. Next, we point out some undocumented discrepancies between Nipype and FSL functions that led to substantial differences in results. Finally, we provide revised Nipype code in re-executable notebooks that assure result invariability between FSL and Nipype. Our analyses, notebooks, and operating software specifications (e.g., docker build files) are available on the Open Science Framework platform.},
+	urldate = {2024-02-28},
+	journal = {Frontiers in Neuroimaging},
+	author = {Chen, Yibei and Hopp, Frederic R. and Malik, Musa and Wang, Paula T. and Woodman, Kylie and Youk, Sungbin and Weber, René},
+	month = jul,
+	year = {2022},
+	pages = {953215},
+	file = {Chen et al. - 2022 - Reproducing FSL's fMRI data analysis via Nipype R.pdf:/home/alpron/Zotero/storage/SA5LQY4U/Chen et al. - 2022 - Reproducing FSL's fMRI data analysis via Nipype R.pdf:application/pdf},
+}
+
+@misc{noauthor_bids-standardbep028_bidsprov_2024,
+	title = {bids-standard/{BEP028}\_BIDSprov},
+	copyright = {CC-BY-4.0},
+	url = {https://github.com/bids-standard/BEP028_BIDSprov},
+	abstract = {Organizing and coordinating BIDS extension proposal 28 : BIDS Provenance},
+	urldate = {2024-02-29},
+	publisher = {Brain Imaging Data Structure},
+	month = jan,
+	year = {2024},
+	note = {original-date: 2020-03-05T14:14:58Z},
+	keywords = {BIDS, provenance},
+}
+
+@misc{noauthor_bids_nodate,
+	title = {{BIDS} {Extension} {Proposal} ({BEP028}): {Provenance}},
+	shorttitle = {{BIDS} {Extension} {Proposal} ({BEP028})},
+	url = {https://docs.google.com/document/d/1vw3VNDof5cecv2PkFp7Lw_pNUTUo8-m8V4SIdtGJVKs/edit?usp=sharing&usp=embed_facebook},
+	language = {fr},
+	urldate = {2024-02-29},
+	journal = {Google Docs},
+	keywords = {BIDS, provenance},
+	annote = {BIDS-PROV: a BIDS proposal for retrospective provenance standardization
+
+
+retrospective provenance capture about files of a dataset (derived, but also raw (DICOM conversion))
+
+
+relies on jsonld files {\textless}file-name-with-ext{\textgreater}.prov.jsonld
+
+
+several level of provenance associated to entities can be encoded
+
+
+How to output datalad provenance into BIDS-PROV ? + metalad:  https://docs.datalad.org/\_/downloads/metalad/en/latest/pdf/http://www.repronim.org/ohbm2018-training/03-01-reproin/
+},
+	file = {Snapshot:/home/alpron/Zotero/storage/84FRG2PA/edit.html:text/html},
+}
+
+@misc{noauthor_computational_nodate,
+	title = {Computational basis and {ReproIn}/{DataLad}: {A} complete portable and reproducible {fMRI} study from scratch},
+	url = {http://www.repronim.org/ohbm2018-training/03-01-reproin/},
+	urldate = {2024-02-29},
+	keywords = {datalad},
+	file = {Computational basis and ReproIn/DataLad\: ReproIn/DataLad\: A complete portable and reproducible fMRI study from scratch:/home/alpron/Zotero/storage/C7QV89WR/03-01-reproin.html:text/html},
+}
+
+@article{maumet_best_nodate,
+	title = {The best of both worlds: using semantic web with {JSON}-{LD}. {An} example with {NIDM}-{Results} \& {Datalad}},
+	language = {en},
+	author = {Maumet, Camille and Ghosh, Satrajit and Halchenko, Yaroslav O and Jarecka, Dorota and Nichols, Nolan B and Poline, Jean-Baptiste and Hanke, Michael},
+	file = {Maumet et al. - The best of both worlds using semantic web with J.pdf:/home/alpron/Zotero/storage/MW5U3VID/Maumet et al. - The best of both worlds using semantic web with J.pdf:application/pdf},
+}
+
+@article{nichols_best_2017,
+	title = {Best practices in data analysis and sharing in neuroimaging using {MRI}},
+	volume = {20},
+	language = {en},
+	number = {3},
+	journal = {CO M M E N TA RY},
+	author = {Nichols, Thomas E and Das, Samir and Eickhoff, Simon B and Evans, Alan C and Glatard, Tristan and Hanke, Michael and Kriegeskorte, Nikolaus and Milham, Michael P and Poldrack, Russell A and Poline, Jean-Baptiste and Proal, Erika and Thirion, Bertrand},
+	year = {2017},
+	file = {Nichols et al. - 2017 - Best practices in data analysis and sharing in neu.pdf:/home/alpron/Zotero/storage/H88I739N/Nichols et al. - 2017 - Best practices in data analysis and sharing in neu.pdf:application/pdf},
+}
+
+@misc{noauthor_datalad_nodate,
+	title = {{DataLad} extension module for neuroimaging studies — {Datalad} for {Hirnis} 0.0.8 documentation},
+	url = {http://docs.datalad.org/projects/hirni/en/latest/index.html},
+	urldate = {2024-03-19},
+	keywords = {datalad},
+	file = {DataLad extension module for neuroimaging studies — Datalad for Hirnis 0.0.8 documentation:/home/alpron/Zotero/storage/Z3HMSFLD/index.html:text/html},
+}
+
+@misc{halchenko_nipyheudiconv_2023,
+	title = {nipy/heudiconv: v1.0.0},
+	copyright = {Open Access},
+	shorttitle = {nipy/heudiconv},
+	url = {https://zenodo.org/record/1012598},
+	abstract = {💥 Breaking Change gh-actions: Bump actions/checkout from 3 to 4 \#703 (@dependabot[bot]) 🚀 Enhancement Fix inconsistent behavior of existing session when using -d compared to --files option: raise an AssertionError instead of just a warning \#682 (@neurorepro) 🐛 Bug Fix Various tiny enhancements flake etc demanded \#702 (@yarikoptic) Boost claimed BIDS version to 1.8.0 from 1.4.1 \#699 (@yarikoptic) Point to Courtois-neuromod heuristic \#702 (@yarikoptic) 🏠 Internal Add codespell to lint tox env \#706 (@yarikoptic) test-compare-two-versions.sh: also ignore differences in HeudiconvVersion field in jsons since we have it there now \#685 (@yarikoptic) 📝 Documentation Add description of placeholders which could be used in the produced templates \#681 (@yarikoptic) Authors: 3 @dependabot[bot] Michael (@neurorepro) Yaroslav Halchenko (@yarikoptic)},
+	urldate = {2024-03-19},
+	publisher = {[object Object]},
+	author = {Halchenko, Yaroslav and Goncalves, Mathias and Velasco, Pablo and Di Oleggio Castello, Matteo Visconti and {Satrajit Ghosh} and Salo, Taylor and Wodder, John T. and Hanke, Michael and Sadil, Patrick and Christian, Horea and Michael and Dae and Tilley, Steven and Kent, James and To, Isaac and Brett, Matthew and Amlien, Inge and Gorgolewski, Chris and Markiewicz, Chris and Lukas, Darren Christopher and Callenberg, Keith and {Aksoo} and Kahn, Ari and Macdonald, Austin and Poldrack, Benjamin and Melo, Bruno and Braun, Henry and Lee, John and Pellman, John and Michael},
+	month = sep,
+	year = {2023},
+	doi = {10.5281/ZENODO.1012598},
+	keywords = {datalad, BIDS},
+}
+
+@article{rosenblatt_data_2024,
+	title = {Data leakage inflates prediction performance in connectome-based machine learning models},
+	volume = {15},
+	issn = {2041-1723},
+	url = {https://www.nature.com/articles/s41467-024-46150-w},
+	doi = {10.1038/s41467-024-46150-w},
+	abstract = {Abstract
+            Predictive modeling is a central technique in neuroimaging to identify brain-behavior relationships and test their generalizability to unseen data. However, data leakage undermines the validity of predictive models by breaching the separation between training and test data. Leakage is always an incorrect practice but still pervasive in machine learning. Understanding its effects on neuroimaging predictive models can inform how leakage affects existing literature. Here, we investigate the effects of five forms of leakage–involving feature selection, covariate correction, and dependence between subjects–on functional and structural connectome-based machine learning models across four datasets and three phenotypes. Leakage via feature selection and repeated subjects drastically inflates prediction performance, whereas other forms of leakage have minor effects. Furthermore, small datasets exacerbate the effects of leakage. Overall, our results illustrate the variable effects of leakage and underscore the importance of avoiding data leakage to improve the validity and reproducibility of predictive modeling.},
+	language = {en},
+	number = {1},
+	urldate = {2024-03-19},
+	journal = {Nature Communications},
+	author = {Rosenblatt, Matthew and Tejavibulya, Link and Jiang, Rongtao and Noble, Stephanie and Scheinost, Dustin},
+	month = feb,
+	year = {2024},
+	pages = {1829},
+	file = {Rosenblatt et al. - 2024 - Data leakage inflates prediction performance in co.pdf:/home/alpron/Zotero/storage/78MZZXHW/Rosenblatt et al. - 2024 - Data leakage inflates prediction performance in co.pdf:application/pdf},
+}
+
+@article{dafflon_guided_2022,
+	title = {A guided multiverse study of neuroimaging analyses},
+	volume = {13},
+	issn = {2041-1723},
+	url = {https://www.nature.com/articles/s41467-022-31347-8},
+	doi = {10.1038/s41467-022-31347-8},
+	abstract = {Abstract
+            For most neuroimaging questions the range of possible analytic choices makes it unclear how to evaluate conclusions from any single analytic method. One possible way to address this issue is to evaluate all possible analyses using a multiverse approach, however, this can be computationally challenging and sequential analyses on the same data can compromise predictive power. Here, we establish how active learning on a low-dimensional space capturing the inter-relationships between pipelines can efficiently approximate the full spectrum of analyses. This approach balances the benefits of a multiverse analysis without incurring the cost on computational and predictive power. We illustrate this approach with two functional MRI datasets (predicting brain age and autism diagnosis) demonstrating how a multiverse of analyses can be efficiently navigated and mapped out using active learning. Furthermore, our presented approach not only identifies the subset of analysis techniques that are best able to predict age or classify individuals with autism spectrum disorder and healthy controls, but it also allows the relationships between analyses to be quantified.},
+	language = {en},
+	number = {1},
+	urldate = {2024-03-06},
+	journal = {Nature Communications},
+	author = {Dafflon, Jessica and F. Da Costa, Pedro and Váša, František and Monti, Ricardo Pio and Bzdok, Danilo and Hellyer, Peter J. and Turkheimer, Federico and Smallwood, Jonathan and Jones, Emily and Leech, Robert},
+	month = jun,
+	year = {2022},
+	pages = {3758},
+	file = {Dafflon et al. - 2022 - A guided multiverse study of neuroimaging analyses.pdf:/home/alpron/Zotero/storage/8S87S654/Dafflon et al. - 2022 - A guided multiverse study of neuroimaging analyses.pdf:application/pdf},
+}
+
+@unpublished{vila_impact_2024,
+	title = {The {Impact} of {Hardware} {Variability} on {Applications} {Packaged} with {Docker} and {Guix}: a {Case} {Study} in {Neuroimaging}},
+	shorttitle = {The {Impact} of {Hardware} {Variability} on {Applications} {Packaged} with {Docker} and {Guix}},
+	url = {https://hal.science/hal-04480308},
+	abstract = {The reproducibility of neuroimaging analyses across computational environments has gained significant attention over the last few years. While software containerization solutions such as Docker and Singularity have been deployed to mask the effects of softwareinduced variability, variations in hardware architectures still impact neuroimaging results in an unclear way. We study the effect of hardware variability on linear registration results produced by the FSL FLIRT application, a widely-used software component in neuroimaging data analyses. Using the Grid'5000 infrastructure, we study the effect of nine different CPU models using two software packaging systems (Docker and Guix), and we compare the resulting hardware variability to numerical variability measured with random rounding. Results show that hardware, software, and numerical variability lead to perturbations of similar magnitudes — albeit uncorrelated — suggesting that these three types of variability act as independent sources of numerical noise with similar
+magnitude. Therefore, random rounding is as a practical solution to measure the effect of numerical noise induced by hardware variability in this application. The effect of hardware perturbations on linear registration remains moderate, with average translation errors of 0.1 mm (maximum: 0.5 mm) and average rotation errors of 0.02 deg (maximum: 0.2 deg). Such variations might impact downstream analyses when linear registration is used as initialization step for other operations.},
+	urldate = {2024-03-21},
+	author = {Vila, Gaël and Medernach, Emmanuel and Gonzalez, Inés and Bonnet, Axel and Chatelain, Yohan and Sdika, Michaël and Glatard, Tristan and Camarasu-Pop, Sorina},
+	month = feb,
+	year = {2024},
+	keywords = {CPU micro-architecture, Neuroimaging, Random rounding, Reproducibility, Software packaging},
+	annote = {Submitted at https://acm-rep.github.io/2024/},
+	file = {HAL PDF Full Text:/home/alpron/Zotero/storage/HQPFHLFC/Vila et al. - 2024 - The Impact of Hardware Variability on Applications.pdf:application/pdf},
+}
+
+@misc{maumet_towards_nodate,
+	title = {Towards reusable derived data in neuroimaging},
+	language = {en},
+	author = {Maumet, Camille},
+	file = {Maumet - Towards reusable derived data in neuroimaging.pdf:/home/alpron/Zotero/storage/SPIMSHT9/Maumet - Towards reusable derived data in neuroimaging.pdf:application/pdf},
+}
+
+@phdthesis{maumet_towards_nodate-1,
+	title = {Towards reproducible neuroimaging: {Solutions} for sharing and re-using brain imaging data},
+	language = {en},
+	author = {Maumet, Camille},
+	keywords = {Important},
+	annote = {Chapter 1 : Introduction
+reproducibility crisis in different fields of science, focus here  on neuroimaging reproducibility more precisely on reproducibility of  task fMRI based studies.
+same data different analysis = robust
+same data same analysis = reproducible
+diffrent data same analysis = replicable
+The “vibration of effects” (VoE)[2] describes the extent to which an estimated association changes under multiple distinct analytical modeling approaches --{\textgreater} variation of effect size found due to human intervention 
+},
+	file = {Maumet - Towards reproducible neuroimaging Solutions for s.pdf:/home/alpron/Zotero/storage/S7YM9AUP/Maumet - Towards reproducible neuroimaging Solutions for s.pdf:application/pdf},
+}
+
+@article{martone_past_2024,
+	title = {The past, present and future of neuroscience data sharing: a perspective on the state of practices and infrastructure for {FAIR}},
+	volume = {17},
+	issn = {1662-5196},
+	shorttitle = {The past, present and future of neuroscience data sharing},
+	url = {https://www.frontiersin.org/articles/10.3389/fninf.2023.1276407/full},
+	doi = {10.3389/fninf.2023.1276407},
+	abstract = {Neuroscience has made significant strides over the past decade in moving from a largely closed science characterized by anemic data sharing, to a largely open science where the amount of publicly available neuroscience data has increased dramatically. While this increase is driven in significant part by large prospective data sharing studies, we are starting to see increased sharing in the long tail of neuroscience data, driven no doubt by journal requirements and funder mandates. Concomitant with this shift to open is the increasing support of the FAIR data principles by neuroscience practices and infrastructure. FAIR is particularly critical for neuroscience with its multiplicity of data types, scales and model systems and the infrastructure that serves them. As envisioned from the early days of neuroinformatics, neuroscience is currently served by a globally distributed ecosystem of neuroscience-centric data repositories, largely specialized around data types. To make neuroscience data findable, accessible, interoperable, and reusable requires the coordination across different stakeholders, including the researchers who produce the data, data repositories who make it available, the aggregators and indexers who field search engines across the data, and community organizations who help to coordinate efforts and develop the community standards critical to FAIR. The International Neuroinformatics Coordinating Facility has led efforts to move neuroscience toward FAIR, fielding several resources to help researchers and repositories achieve FAIR. In this perspective, I provide an overview of the components and practices required to achieve FAIR in neuroscience and provide thoughts on the past, present and future of FAIR infrastructure for neuroscience, from the laboratory to the search engine.},
+	language = {en},
+	urldate = {2024-04-22},
+	journal = {Frontiers in Neuroinformatics},
+	author = {Martone, Maryann E.},
+	month = jan,
+	year = {2024},
+	keywords = {Important, Review, oscars},
+	pages = {1276407},
+	file = {Martone - 2024 - The past, present and future of neuroscience data .pdf:/home/alpron/Zotero/storage/JSZZGSIN/Martone - 2024 - The past, present and future of neuroscience data .pdf:application/pdf},
+}
+
+@article{sanz-robinson_open-source_nodate,
+	title = {Open-source tools and platforms to investigate analytical variability in neuroimaging},
+	author = {Sanz-Robinson, Jacob and Wang, Michelle and McPherson, Brent and Glatard, Tristan and Poline, Jean-Baptiste},
+	note = {Publisher: OSF},
+	file = {Sanz-Robinson et al. - Open-source tools and platforms to investigate ana.pdf:/home/alpron/Zotero/storage/ZCERUVV7/Sanz-Robinson et al. - Open-source tools and platforms to investigate ana.pdf:application/pdf},
+}
+
+@article{luppi_systematic_2024,
+	title = {Systematic evaluation of {fMRI} data-processing pipelines for consistent functional connectomics},
+	volume = {15},
+	issn = {2041-1723},
+	url = {https://www.nature.com/articles/s41467-024-48781-5},
+	doi = {10.1038/s41467-024-48781-5},
+	abstract = {Abstract
+            Functional interactions between brain regions can be viewed as a network, enabling neuroscientists to investigate brain function through network science. Here, we systematically evaluate 768 data-processing pipelines for network reconstruction from resting-state functional MRI, evaluating the effect of brain parcellation, connectivity definition, and global signal regression. Our criteria seek pipelines that minimise motion confounds and spurious test-retest discrepancies of network topology, while being sensitive to both inter-subject differences and experimental effects of interest. We reveal vast and systematic variability across pipelines’ suitability for functional connectomics. Inappropriate choice of data-processing pipeline can produce results that are not only misleading, but systematically so, with the majority of pipelines failing at least one criterion. However, a set of optimal pipelines consistently satisfy all criteria across different datasets, spanning minutes, weeks, and months. We provide a full breakdown of each pipeline’s performance across criteria and datasets, to inform future best practices in functional connectomics.},
+	language = {en},
+	number = {1},
+	urldate = {2024-06-07},
+	journal = {Nature Communications},
+	author = {Luppi, Andrea I. and Gellersen, Helena M. and Liu, Zhen-Qi and Peattie, Alexander R. D. and Manktelow, Anne E. and Adapa, Ram and Owen, Adrian M. and Naci, Lorina and Menon, David K. and Dimitriadis, Stavros I. and Stamatakis, Emmanuel A.},
+	month = jun,
+	year = {2024},
+	pages = {4745},
+	file = {Luppi et al. - 2024 - Systematic evaluation of fMRI data-processing pipe.pdf:/home/alpron/Zotero/storage/HB2VTQ7Y/Luppi et al. - 2024 - Systematic evaluation of fMRI data-processing pipe.pdf:application/pdf},
+}
+
+@misc{michael_demidenko_demidenmpyrelimri_2024,
+	title = {demidenm/{PyReliMRI}: v2.1.0},
+	copyright = {Creative Commons Attribution 4.0 International},
+	shorttitle = {demidenm/{PyReliMRI}},
+	url = {https://zenodo.org/doi/10.5281/zenodo.12512085},
+	abstract = {Several changes and additions are made:
+
+
+
+A more comprehensive docstring is used to enhance information on PyReliMRI readthedocs
+
+The ICC function tests were expanded to confirm ICC, between subject variance and within subject variance estimates from sumqc\_icc() are compared to estimates from liner mixed effect model outputs from stat models. Specifically, see test comparing pyrelimri.icc vs statsmodels
+
+The returned list of estimates for ICC computations have been revised. Previously, the MSBS and MSWS were returned. However, this was not always informative to the ICC being computed, nor to understanding how variances are impacted. For example, when the ICC(3,1) was returned, the MSBS and MSWS were not directly used in the computation. Furthermore, they were not true to the denominator and the numerator for each formula. Thus, for voxelwise, edgewise, rois, etc., where sumsq\_icc() is used, now a dictionary is returned with: 1) ICC estimate, 2) upper 95CI, 3) lower 95CI, 4) between subject variance, 5) within subject variance, 6) between measure variance (in case of ICC(2,1), otherwise None/empty values)
+
+Included a TR-by-TR timeseries extraction for masks/coordinates and locked to onset times/behavioral events. This provides the extraction of the mean signal change across a timeseries for a given ROI. This is based on Nilearn's niftimaskers where standardizing via the call 'psc'
+
+Included an edgewise\_icc computation on correlation matrices. This is strictly for comparing a list of lists of variables includes subjects' correlation matrices across runs/sessions or the paths to these correlation matrices. Note, if using pandas dataframe standards, it is assumed that the header = None and row index = None},
+	urldate = {2024-06-24},
+	publisher = {Zenodo},
+	author = {Michael Demidenko and Russ Poldrack and Chris Markiewicz and Elizabeth DuPre},
+	month = jun,
+	year = {2024},
+	doi = {10.5281/ZENODO.12512085},
+}
+
+@misc{segal_embracing_2024,
+	title = {Embracing variability in the search for biological mechanisms of psychiatric illness},
+	copyright = {https://creativecommons.org/licenses/by/4.0/legalcode},
+	url = {https://osf.io/5mz46},
+	doi = {10.31219/osf.io/5mz46},
+	abstract = {Despite decades of research, we lack objective diagnostic or prognostic biomarkers of mental health problems. A key reason for this limited progress is a reliance on the traditional case-control paradigm, which assumes that each disorder has a single cause that can be uncovered by comparing average phenotypic values of cases and control samples. Here, we discuss the problematic assumptions on which this paradigm is based and highlight recent efforts that seek to characterize, rather than minimize, the inherent clinical and biological variability that characterizes psychiatric populations. We argue that embracing such variability will be necessary to understand pathophysiological mechanisms and to develop more targeted and effective treatments.},
+	urldate = {2024-07-05},
+	author = {Segal, Ashlea and Tiego, Jeggan and Holmes, Avram J and {Andre} and Fornito, Alex},
+	month = jun,
+	year = {2024},
+	keywords = {generalizibility, to read},
+	file = {Segal et al. - 2024 - Embracing variability in the search for biological.pdf:/home/alpron/Zotero/storage/PC58H3RX/Segal et al. - 2024 - Embracing variability in the search for biological.pdf:application/pdf},
 }
